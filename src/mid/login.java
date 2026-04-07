@@ -139,36 +139,7 @@ public class login extends javax.swing.JFrame {
 
     private void jButton1_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_loginActionPerformed
 
-        Connection conn = connectiondb.getConnection();
-
-        try {
-            String sql = "SELECT * FROM use WHERE username=? AND password=?";
-            PreparedStatement pst = conn.prepareStatement(sql);
-
-            String user = username.getText();
-            String pass = new String(password.getPassword());
-
-            pst.setString(1, user);
-            pst.setString(2, pass);
-
-            ResultSet rs = pst.executeQuery();
-
-            if (rs.next()) {
-
-                int confirm = JOptionPane.showConfirmDialog(this, "Login successful. Continue?");
-
-                if (confirm == JOptionPane.YES_OPTION) {
-                    new dashboard.setVisible(true);
-                    this.dispose();
-                }
-
-            } else {
-                JOptionPane.showMessageDialog(this, "Incorrect Credentials!");
-            }
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
-        }
+        
 
 
     }//GEN-LAST:event_jButton1_loginActionPerformed

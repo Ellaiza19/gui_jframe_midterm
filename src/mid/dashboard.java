@@ -30,22 +30,7 @@ public class dashboard extends javax.swing.JFrame {
         PreparedStatement pst = conn.prepareStatement(sql);
         ResultSet rs = pst.executeQuery();
 
-        DefaultTableModel model = (DefaultTableModel) table.getModel();
-        model.setRowCount(0);
-
-        while (rs.next()) {
-            model.addRow(new Object[]{
-                rs.getString("username"),
-                rs.getString("password")               
-            });
-        }
-
-    } catch (Exception e) {
-        JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
-    }
-    
-    System.out.println("Loading data...");
-}
+        
 
 
     
