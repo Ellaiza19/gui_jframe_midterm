@@ -14,16 +14,3 @@ public class connectiondb {
     public static Connection getConnection() {
         Connection conn = null;
         
-        try {
-            conn = DriverManager.getConnection(URL,User,Password);
-            System.out.println("Database Connected Successfully!");
-            
-        } catch (SQLException e) {
-            System.out.println("Connection Failed!");
-            e.printStackTrace();
-            
-        }
-        return conn;
-    }
-    
-}
